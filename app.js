@@ -125,7 +125,7 @@ function deleteCheck(event) {
       if (remainingTime === "") {
         currentTask = task.text;
       } else {
-        currentTask = task.text + "\n" + remainingTime;
+        currentTask = task.text.trimRight() + "\n" + remainingTime;
       }
       if (currentTask === todo.childNodes[0].innerText) {
         task.complete = !task.complete;
@@ -158,7 +158,7 @@ function updateView() {
   todoList.innerHTML = "";
   getTodos();
 }
-
+//sorts so that latest completed task is first
 function sortCompletedTasks(e) {
   var myTodos = sessionStorage.getItem("todos");
   myTodos = myTodos ? JSON.parse(myTodos) : {};
@@ -188,7 +188,7 @@ function sortCompletedTasks(e) {
   selector[1].disabled = true;
   selector[2].disabled = false;
 }
-
+//Basic sort that places all not completed items first
 function sortAllTasks(e) {
   var myTodos = sessionStorage.getItem("todos");
   myTodos = myTodos ? JSON.parse(myTodos) : {};
@@ -207,7 +207,7 @@ function sortAllTasks(e) {
   selector[1].disabled = false;
   selector[2].disabled = false;
 }
-
+//sorts so that item with
 function sortByDate() {
   var myTodos = sessionStorage.getItem("todos");
   myTodos = myTodos ? JSON.parse(myTodos) : {};
