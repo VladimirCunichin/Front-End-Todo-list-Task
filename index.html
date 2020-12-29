@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e58571cbef.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Todo list</title>
+  </head>
+  <body>
+    <header>
+      <h1>Todo list</h1>
+    </header>
+
+    <form>
+      <div class="input-container">
+        <label class="description">Task description</label>
+        <input type="text" class="todo-input" maxlength="160" required />
+        <p id="error">This field is required</p>
+      </div>
+      <div class="input-container">
+        <label class="date">Task deadline</label>
+        <input type="datetime-local" class="date-input" />
+      </div>
+
+      <button class="todo-button" type="submit">
+        <i class="fas fa-plus-square"></i>
+      </button>
+      <div class="select">
+        <select
+          name="todos"
+          class="filter-todo"
+          onchange="
+        switch (this.value){
+          case 'all': sortAllTasks(); break;
+          case 'completed': sortCompletedTasks(); break;
+          case 'date': sortByDate(); break;
+       }"
+        >
+          <option value="all" id="sort-all">All</option>
+          <option value="completed" id="sort-completed">Complete</option>
+          <option value="date" id="sort-date">Date</option>
+        </select>
+      </div>
+    </form>
+    <div class="todo-container">
+      <ul class="todo-list"></ul>
+    </div>
+
+    <div id="confirm-box">
+      <div class="dialogbox">
+        <h1>Are you sure you want to delete this task?</h1>
+        <button id="confirm">confirm</button>
+        <button id="cancel">cancel</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
