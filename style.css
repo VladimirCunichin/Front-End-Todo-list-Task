@@ -22,74 +22,6 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
-
-#confirm-box {
-  display: none;
-  position: absolute;
-  max-width: 50vh;
-  text-align: center;
-  background-color: #fff;
-  padding: 15px 15px;
-  font-size: 10px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: black;
-  border-radius: 10px;
-}
-
-#confirm-box h1 {
-  margin-bottom: 25px;
-}
-
-#confirm-box button {
-  width: 67px;
-  text-align: center;
-  background: white;
-  border-radius: 5px;
-  padding: 10px 10px;
-  border: none;
-}
-
-#confirm-box #cancel:hover {
-  background: rgb(211, 74, 74);
-}
-#confirm-box #confirm:hover {
-  background: rgb(189, 188, 188);
-}
-
-#confirm-box #confirm {
-  background: lightgray;
-}
-
-#confirm-box #cancel {
-  background: rgb(235, 82, 82);
-}
-
-.input-container {
-  margin-bottom: 10px;
-}
-
-.description,
-.date {
-  font-size: 24px;
-  margin-left: 25px;
-  padding-right: 10px;
-}
-
-#error {
-  text-align: right;
-  color: red;
-  display: none;
-}
-
-.input-container[data-error]::after {
-  content: attr(data-error);
-  display: block;
-  color: red;
-  text-align: right;
 }
 
 form input,
@@ -106,7 +38,7 @@ form button {
   height: 100%;
   cursor: pointer;
   transition: all 0.3 ease;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 form button:hover {
@@ -148,13 +80,8 @@ form button:hover {
   transition: all 0.3s ease;
 }
 
-.todo li {
-  flex: 1;
-}
-
 .trash-btn,
 .complete-btn {
-  background: #ff6f47;
   color: white;
   border: none;
   padding: 16px;
@@ -162,19 +89,12 @@ form button:hover {
   font-size: 16px;
 }
 
-@-moz-document url-prefix() {
-  .trash-btn {
-    margin-right: 16px;
-  }
+.trash-btn {
+  background: #ff6f47;
 }
 
 .complete-btn {
   background: rgb(13, 201, 13);
-}
-
-.todo-item {
-  padding: 0 8px;
-  word-wrap: break-word;
 }
 
 .fa-trash,
@@ -182,35 +102,16 @@ form button:hover {
   pointer-events: none;
 }
 
+.todo li {
+  flex: 1;
+}
+
+.todo-item {
+  padding: 0 0.5rem;
+  word-wrap: break-word;
+}
+
 .completed {
   text-decoration: line-through;
   opacity: 0.7;
-}
-
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  border: none;
-  color: #ff6f47;
-  width: 160px;
-  cursor: pointer;
-  padding: 16px;
-}
-
-.select {
-  margin: 16px;
-  position: relative;
-  overflow: hidden;
-}
-
-.select:after {
-  content: "\25BC";
-  position: absolute;
-  background: #ff6f47;
-  top: 0;
-  right: 0;
-  padding: 16px;
-  pointer-events: none;
 }
